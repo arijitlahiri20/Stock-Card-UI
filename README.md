@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
-It contains 12 StockTicker Cards for latest stock transaction of the different companies.
+It contains 12 StockTicker Cards for viewing latest stock transaction of the different companies.
 
 ## Development server
 
