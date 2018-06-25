@@ -83,6 +83,7 @@ export class MainPageComponent implements OnInit {
     document.getElementById(sec).innerHTML = "SECTOR : " + l.sector;
     document.getElementById(ind).innerHTML = "INDUSTRY : " + l.industry;
     document.getElementById(ceo).innerHTML = "CEO : " + l.CEO;
+    document.getElementById(web).innerHTML = l.website ;
     (document.getElementById(web) as HTMLLinkElement).href =l.website;
     document.getElementById(des).innerHTML = "DESCRIPTION : " + l.description;
   }
@@ -126,8 +127,12 @@ export class MainPageComponent implements OnInit {
   }
  
   logo(l,id){
-   // console.log(l.url);
+   console.log(l.url);
+   let u : string = l.url;
     (document.getElementById(id) as HTMLImageElement).src = l.url;
+    if(id=="m11")
+      (document.getElementById(id) as HTMLDivElement).style.background = u;
+
   }
 
   callGetApi(apiurl: string, callback) {
