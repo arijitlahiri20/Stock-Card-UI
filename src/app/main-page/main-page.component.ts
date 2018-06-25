@@ -128,11 +128,7 @@ export class MainPageComponent implements OnInit {
  
   logo(l,id){
    console.log(l.url);
-   let u : string = l.url;
     (document.getElementById(id) as HTMLImageElement).src = l.url;
-    if(id=="m11")
-      (document.getElementById(id) as HTMLDivElement).style.background = u;
-
   }
 
   callGetApi(apiurl: string, callback) {
