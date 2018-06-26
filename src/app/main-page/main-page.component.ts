@@ -33,11 +33,21 @@ export class MainPageComponent implements OnInit {
     /* Companies Symbols -  AAPL,MSFT,IBN,V,HDB,PYPL,TSLA,FB,AXP,KO,BABA,VOD */
     
   ngOnInit() {
+    
       this.getData();
 
+      setTimeout(this.updateData, 3000);
       interval = setInterval(() => { 
         this.getData(); 
+        (document.getElementById("main") as HTMLDivElement).style.display = "none";
+      (document.getElementById("loader") as HTMLDivElement).style.display = "block";
+        setTimeout(this.updateData, 3000);
     }, 120000);
+  }
+
+  updateData(){
+    (document.getElementById("main") as HTMLDivElement).style.display = "grid";
+      (document.getElementById("loader") as HTMLDivElement).style.display = "none";
   }
 
   getData(){
@@ -128,7 +138,7 @@ export class MainPageComponent implements OnInit {
  
   logo(l,id){
    console.log(l.url);
-    (document.getElementById(id) as HTMLImageElement).src = l.url;
+    //(document.getElementById(id) as HTMLImageElement).src = l.url;
   }
 
   callGetApi(apiurl: string, callback) {

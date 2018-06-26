@@ -3,9 +3,33 @@ html {
     padding: 20px 0;
     display: flex;
 }
-
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 .main-division{
-    width: 90%;
+  width: 90%;
   max-width: 1240px;
   margin: 0 auto;
   font-family: 'Roboto';
@@ -14,8 +38,24 @@ html {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 30px;
+
+  position: relative;
+  -webkit-animation-name: maindivision;
+  -webkit-animation-duration: 1s;
+  animation-name: maindivision;
+  animation-duration: 1s
     
 }
+@-webkit-keyframes maindivision {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes maindivision { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
 
 hr {
     border: 1px solid lightgray;
@@ -46,20 +86,28 @@ img{
 .logo{
     width: 100%;
     height: 60px;
+    align-content: center;
 }
 
-#m3{
-    background: url("https://storage.googleapis.com/iex/api/logos/IBN.png") no-repeat center ;
+.box{
+    margin-left: 30%;
+    margin-right: 30%;
+    max-width: 40%;
+    height: 60px;
 }
-#m6{
-    background: url("https://storage.googleapis.com/iex/api/logos/PYPL.png") no-repeat center ;
-}
-#m10{
-    background: url("https://storage.googleapis.com/iex/api/logos/KO.png") no-repeat center ;
-}
-#m11{
-    background: url("https://storage.googleapis.com/iex/api/logos/BABA.png") no-repeat center ;
-}
+#box1{ background: url("/assets/AAPL.png") no-repeat center ; background-size: contain; }
+#box2{ background: url("/assets/MSFT.png") no-repeat center ; background-size: contain; }
+#box3{ background: url("/assets/IBN.png") no-repeat center ;  }
+#box4{ background: url("/assets/V.png") no-repeat center ;  background-size: contain; }
+#box5{ background: url("/assets/HDB.png") no-repeat center ;  background-size: contain; }
+#box6{ background: url("/assets/PYPL.png") no-repeat center ;  }
+#box7{ background: url("/assets/TSLA.png") no-repeat center ; background-size: contain; }
+#box8{ background: url("/assets/FB.png") no-repeat center ; background-size: contain; }
+#box9{ background: url("/assets/AXP.png") no-repeat center ; background-size: contain; }
+#box10{ background: url("/assets/KO.png") no-repeat center ;  }
+#box11{ background: url("/assets/BABA.png") no-repeat center ;  }
+#box12{ background: url("/assets/VOD.png") no-repeat center ; background-size: contain; }
+
 
 .name{
     font-size: 18px;
